@@ -23,3 +23,10 @@ I prefer to just airdrop that pdf to this local repository in `data/`
 pip install requirements.txt
 ./convert.sh /path/to/pdf.pdf /path/to/output.csv
 ```
+
+WARNING: There are some problems when converting from the PDF version to
+the text version of the pdf. It makes it difficult to determine which
+transaction is a part of which section sometimes. I added printing of the dataframe
+in order to make sure you can see that all of your values align correctly. If they 
+don't, then I suggest editing the file `/tmp/pdf_temp` where the intermediate
+pdf is stored in order to make sure everything is parsed correctly from the pdf.

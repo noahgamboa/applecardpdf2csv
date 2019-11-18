@@ -9,6 +9,7 @@ if [ -z "$2" ]; then
     exit 1
 fi
 which python3
+rm /tmp/pdf_temp
 python3 pdf2applecardtxt.py $1 --outfile /tmp/pdf_temp
 python3 applecardtxt2csv.py /tmp/pdf_temp $2
 

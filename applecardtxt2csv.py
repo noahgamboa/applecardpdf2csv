@@ -82,6 +82,7 @@ def main(args=None):
                 values[i].append("")
 
         df = pd.DataFrame(values)
+        print(df.to_string())
 
         for (index, row) in df.iterrows():
             if row["Date"] != "" and row["Description"] == "":
@@ -92,7 +93,7 @@ def main(args=None):
                         values[slot].append("")
 
         df = pd.DataFrame(values)
-        # print(df.to_string())
+        print(df.to_string())
         df.to_csv(args.savefile, index=False)
     return 0
 
