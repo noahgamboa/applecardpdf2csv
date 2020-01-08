@@ -1,6 +1,7 @@
 """
 Converts PDF text content (though not images containing text) to plain text, html, xml or "tags".
 """
+import os
 import argparse
 import logging
 import six
@@ -22,6 +23,7 @@ def extract_text(files=[], outfile='-',
             disable_caching=False, **other):
     # if _py2_no_more_posargs is not None:
     #     raise ValueError("Too many positional arguments passed.")
+    print(files)
     if not files:
         raise ValueError("Must provide files to work upon!")
 
@@ -57,7 +59,8 @@ def extract_text(files=[], outfile='-',
 
 
     for fname in files:
-        with open(fname, "rb") as fp:
+        expanded_fname = os.path.expanduser(fname)
+        with open(expanded_fname, "rb") as fp:
             pdfminer.high_level.extract_text_to_fp(fp, **locals())
     return outfp
 

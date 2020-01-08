@@ -1,5 +1,10 @@
 # Apple Card Statements can be converted into a nice CSV
 
+Currently working on integrating this but if you use [Tabula](http://tabula.technology)
+it can be much easier to convert it to a table that is reasonable. I'm currently 
+working on taking something like this and shipping it as a binary, which I think would be
+super useful. 
+
 only converts the transactions into a csv and doesn't parse all of them.
 
 I felt this was useful because you could then use the csv and send it to 
